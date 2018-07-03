@@ -43,8 +43,8 @@ server.on('request', function(request, response) {
             response.end();
         })
     } else {
-    	response.setHeader('Content-Type', 'image/jpg');
-        fs.readFile('./404.jpg', function(err, data) {
+    	response.setHeader('Content-Type', 'text/html');
+        fs.readFile('https://i0.wp.com/www.betterhostreview.com/wp-content/uploads/google-404-error.jpg?fit=615%2C362', function(err, data) {
             if (err) throw err;
             response.statusCode = 404;
             response.write(data);
