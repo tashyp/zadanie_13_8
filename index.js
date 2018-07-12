@@ -43,13 +43,11 @@ server.on('request', function(request, response) {
             response.end();
         })
     } else {
-    	response.setHeader('Content-Type', 'text/html');
-        fs.readFile('https://i0.wp.com/www.betterhostreview.com/wp-content/uploads/google-404-error.jpg?fit=615%2C362', function(err, data) {
-            if (err) throw err;
-            response.statusCode = 404;
-            response.write(data);
-            response.end();
-        });
+    	response.statusCode = 404;
+		response.write('<h1>Page not found</h1>');
+		response.write('<img src="http://www.tweaklibrary.com/wp-content/uploads/3-2.png">');
+		response.end();
+        };
     }
-});
+);
 server.listen(8080);
